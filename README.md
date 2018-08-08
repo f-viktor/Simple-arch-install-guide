@@ -24,6 +24,7 @@ swapon /dev/sdx2
 
 # if you are not using a cable network set up a wifi connection via wifi-menu
 (validate with ping)
+before you reboot and you're on a wifi connection make sure you install "dialog" and "wpa_supplicant" 
 
 # step 6 : pacstrap
 pacstrap /mnt base base-devel
