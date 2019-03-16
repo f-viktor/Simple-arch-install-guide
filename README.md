@@ -24,6 +24,10 @@ if that fails
 ```
 systemctl start dhcpcd
 ```
+if you are on wifi
+```
+wifi-menu
+```
 
 ### set clock
 ```
@@ -43,15 +47,23 @@ Y
 
 create partitions 
 ```
+d
+d
+d
+d
 fdisk /dev/sda
 n
-+100G
-n
+p
+
 +250M
+n
+p
+
 a
-2
+1
+w
 ```
-creates a 100G system and a 250m boot partition (needs to be separate bc root encryption)
+creates a 250m boot partition (needs to be separate bc root encryption) and the rest of the disk for data
 
 formatting partitions
 ```
@@ -61,8 +73,8 @@ mkfs.ext4 /dev/sda2
 
 ### Encrypting stuff
 ```
-cryptsetup luksFormat --type luks2 /dev/sda1
-cryptsetup open /dev/sda1 cryptlvm
+cryptsetup luksFormat --type luks2 /dev/sda2
+cryptsetup open /dev/sda2 cryptlvm
 pvcreate /dev/mapper/cryptlvm
 vgcreate MyVolGroup /dev/mapper/cryptlvm
 
@@ -81,7 +93,7 @@ mkdir /mnt/home
 mount /dev/MyVolGroup/home /mnt/home
 swapon /dev/MyVolGroup/swap
 mkdir /mnt/boot
-mount /dev/sdb1 /mnt/boot
+mount /dev/sda1 /mnt/boot
 ```
 
 ### pacstrapping 
@@ -134,7 +146,7 @@ passwd
 pacman -S grub
 grub-install --target=i386-pc /dev/sda
 nvim /etc/default/grub
-change to: GRIB_CMDLINE_LINUX"cryptdevice=UUID=<actual uuid of /dev/sda1(encytped partition) get it from blkid>:cryptlvm root=/dev/MyVolGroup/root
+change to: GRIB_CMDLINE_LINUX"cryptdevice=UUID=<actual uuid of /dev/sda2(encytped partition) get it from blkid>:cryptlvm root=/dev/MyVolGroup/root
 ```
 after this there is some magic because lvm is currently buggy and config generation will hang so
 ```
