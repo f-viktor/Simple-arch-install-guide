@@ -26,8 +26,12 @@ sudo dhcpcd
 
 ## install xorg based i3 packages
 ```
-sp -S xorg xorg-xinit i3 i3blocks dmenu rxvt-unicode
 sudo pacman -S xorg xorg-xinit i3 i3blocks dmenu rxvt-unicode
+```
+
+## install bonus packages
+```
+sudo pacman -S pulseaudio pavucontrol firefox
 ```
 
 ## tell xinit to start i3
