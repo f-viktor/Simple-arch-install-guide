@@ -6,10 +6,12 @@ loadkeys hu
 ```
 
 ## add your user
+```
 useradd myname
 mkdir /home/pepe
 chown pepe:pepe pepe
 passwd pepe
+```
 
 ## add user to sudoers
 
@@ -26,7 +28,7 @@ sudo dhcpcd
 
 ## install xorg based i3 packages
 ```
-sudo pacman -S xorg xorg-xinit i3 i3blocks dmenu rxvt-unicode
+sudo pacman -S xorg xorg-xinit i3 i3blocks rofi xfce4-screnshooter
 ```
 
 ## install bonus packages
@@ -41,7 +43,7 @@ echo "exec i3" >> /home/pepe/.xinitrc
 
 ## reboot or exit your console, if root is still logged in X will not start
 ```
-reboot
+exit
 ```
 
 ## start your gui
