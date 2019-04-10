@@ -47,20 +47,27 @@ Y
 
 create partitions 
 ```
-d
-d
-d
-d
 fdisk /dev/sda
+d
+
+d
+
+d
+
+d
+
 n
 p
 +8G
+m
+p
+
 
 a
 2
 w
 ```
-creates a 8G swap partition 
+creates a 8G swap partition and the rest is for system
 
 formatting partitions
 ```
@@ -87,18 +94,17 @@ genfstab -U /mnt >> /mnt/etc/fstab
 ### put it in
 ```
 arch-chroot /mnt
-pacman -S neovim
 ```
 
 ### generate locale
 ```
-nvim /etc/locale.gen
+nano /etc/locale.gen
 locale-gen
 ```
 
 ### set hostname
 ```
-nvim /etc/hostname
+nano /etc/hostname
 ```
 
 ### generate initramfs
