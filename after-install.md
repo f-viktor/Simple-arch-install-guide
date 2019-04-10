@@ -33,7 +33,7 @@ sudo pacman -S xorg xorg-xinit i3 i3blocks rofi xfce4-screnshooter
 
 ## install bonus packages
 ```
-sudo pacman -S pulseaudio pavucontrol firefox
+sudo pacman -S pulseaudio pavucontrol firefox neovim
 ```
 
 ## tell xinit to start i3
