@@ -2,15 +2,15 @@
 
 ## set language again
 ```
-loadkeys hu
+loadkeys de-latin
 ```
 
 ## add your user
 ```
 useradd myname
-mkdir /home/pepe
-chown pepe:pepe pepe
-passwd pepe
+mkdir /home/myname
+chown myname:myname myname
+passwd myname
 ```
 
 ## add user to sudoers
@@ -18,7 +18,7 @@ passwd pepe
 uncomment the %wheel line in sudoers
 ```
 nano /etc/sudoers
-usermod -aG wheel pepe
+usermod -aG wheel myname
 ```
 
 ## set up internet
@@ -28,7 +28,7 @@ sudo dhcpcd
 
 ## install xorg based i3 packages
 ```
-sudo pacman -S xorg xorg-xinit i3 i3blocks rofi xfce4-screnshooter
+sudo pacman -S xorg xorg-xinit i3 i3blocks rofi xfce4-terminal
 ```
 
 ## install bonus packages
