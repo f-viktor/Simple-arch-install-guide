@@ -26,6 +26,11 @@ usermod -aG wheel myname
 sudo dhcpcd
 ```
 
+## set up ntp
+```
+sudo timedatectl set-ntp true
+```
+
 ## install xorg based i3 packages
 ```
 sudo pacman -S xorg xorg-xinit i3 i3blocks rofi xfce4-terminal
