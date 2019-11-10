@@ -49,20 +49,24 @@ create partitions
 ```
 fdisk /dev/sda
 d
-
+[Enter]
 d
-
+[Enter]
 d
-
+[Enter]
 d
-
+[Enter]
 n
 p
+[Enter]
+[Enter]
 +8G
-m
+[Enter]
+n
 p
-
-
+[Enter]
+[Enter]
+[Enter]
 a
 2
 w
@@ -107,7 +111,7 @@ locale-gen
 nano /etc/hostname
 ```
 
-### generate initramfs
+### generate initramfs XXX no longer necessary
 ```
 mkinitcpio -p linux
 ```
