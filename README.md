@@ -87,7 +87,8 @@ swapon /dev/sda1
 
 ### pacstrapping 
 ```
-pacstrap /mnt base base-devel
+pacstrap /mnt base linux linux-firmware
+
 ```
 
 ### generate fstab
