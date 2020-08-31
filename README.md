@@ -105,6 +105,7 @@ arch-chroot /mnt
 ```
 nano /etc/locale.gen
 locale-gen
+localectl set-locale LANG=en_US.UTF-8
 ```
 
 ### set hostname
