@@ -87,7 +87,7 @@ swapon /dev/sda1
 
 ### pacstrapping 
 ```
-pacstrap /mnt base linux linux-firmware
+pacstrap /mnt base base-devel linux linux-firmware
 
 ```
 
